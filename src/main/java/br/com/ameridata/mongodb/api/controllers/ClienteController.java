@@ -40,7 +40,7 @@ public class ClienteController {
 
 	@PostMapping
 	public ResponseEntity<Response<Cliente>> insert(@Valid @RequestBody Cliente cliente, BindingResult result) {
-		if (result.hasErrors()) { 
+		if (result.hasErrors()) {
 			List<String> errosList = new ArrayList<String>();
 			result.getAllErrors().forEach(e -> errosList.add(e.getDefaultMessage()));
 
@@ -66,6 +66,12 @@ public class ClienteController {
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<Response<Integer>> delete(@PathVariable(name = "id") String id) {
 		this.clienteService.delete(id);
+		return ResponseEntity.ok(new Response<Integer>(1));
+	}
+
+	@DeleteMapping(path = "/delete-all")
+	public ResponseEntity<Response<Integer>> deleteAll() {
+		this.clienteService.deleteAll();
 		return ResponseEntity.ok(new Response<Integer>(1));
 	}
 

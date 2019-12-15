@@ -16,4 +16,6 @@ public interface IClienteService {
 
 	void delete(String id);
 
+	void deleteAll();
+
 }
