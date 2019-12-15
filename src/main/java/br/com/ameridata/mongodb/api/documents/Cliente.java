@@ -1,9 +1,9 @@
 package br.com.ameridata.mongodb.api.documents;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,10 +13,10 @@ public class Cliente {
 	@Id
 	private String id;
 
-	@Size(min = 2, max = 100, message = "Nome deve conter entre 2 e 100 caracteres")
+	@NotBlank(message = "Nome não informado")
 	private String nome;
 
-	@Size(min = 14, max = 18, message = "Documento deve conter entre 14 e 18 caracteres")
+	@NotBlank(message = "Documento não informado")
 	private String documento;
 
 	@NotBlank(message = "Telefone não informado")

@@ -22,7 +22,7 @@ public class ClienteService implements IClienteService {
 
 	@Override
 	public Cliente listById(String id) {
-		return this.clienteRepository.findById(id).get();
+		return this.clienteRepository.findOne(id);
 	}
 
 	@Override
@@ -37,7 +37,12 @@ public class ClienteService implements IClienteService {
 
 	@Override
 	public void delete(String id) {
-		this.clienteRepository.deleteById(id);
+		this.clienteRepository.delete(id);
+	}
+
+	@Override
+	public void deleteAll() {
+		this.clienteRepository.deleteAll();
 	}
 
 }
