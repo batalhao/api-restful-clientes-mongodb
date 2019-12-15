@@ -5,17 +5,17 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.2.RELEASE</version>
+		<version>1.5.6.RELEASE</version> <!-- 2.2.2.RELEASE -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.ameridata.mongodb.api</groupId>
 	<artifactId>clientes</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<name>api-restful-clientes-mongodb</name>
-	<description>API RESTful de cadastro de clientes com Java 11 e MongoDB</description>
+	<description>API RESTful de cadastro de clientes com Java 8 e MongoDB</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version> <!-- 11 --> 
 	</properties>
 
 	<dependencies>
